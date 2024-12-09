@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 import Link  from "next/link";
+import { SignedIn, SignedOut, SignIn, SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
 
 /**
  * Note: issue with rendering, an error will occur using anchor tag 
@@ -14,7 +15,7 @@ export const Navigation = () => {
     const router = useRouter();
 
     return (
-        <nav>
+        <nav className="flex justify-center items-center p-4">
             <Link href="/" className={pathname === "/" ? "font-bold mr-4 text-white-500" : "mr-4 text-blue-500"}>Home</Link>
             <Link href="/about" className={pathname.startsWith("/about") ? "font-bold mr-4 text-white-500" : "mr-4 text-blue-500"}>About</Link>
             <Link href="/blog/first-post" className={pathname.startsWith("/blog") ? "font-bold mr-4 text-white-500" : "mr-4 text-blue-500"}>Blog</Link>
@@ -24,6 +25,14 @@ export const Navigation = () => {
             <a href="/" className="mr-4 text-blue-500">Back to Home - A Tag</a>
 
             <button onClick={() => router.push("/")} className="bg-blue-500 text-white p-2 rounded-md">Back</button>
+
+            <SignedIn>
+                <UserButton/>
+            </SignedIn>
+            <SignedOut>
+                <SignInButton mode="modal"/>
+            </SignedOut>
+            
         </nav>
     );
 }
