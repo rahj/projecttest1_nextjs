@@ -1,15 +1,26 @@
 REY TEST
 -Server Components
+
 -Client Components
+
 -Routing
+
 -Routing Conventions
+
 -File Based Routing
+
 -Route Groups
+
 -Route Handlers
+
 -Layouts
+
 -Data Fetching with JSON Placeholder typicode and Mockapi for data source
+
 -Server Actions
+
 -Authentications using Clerk
+
 -Sessions for Auth and CurrentUser Object from Clerk
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
